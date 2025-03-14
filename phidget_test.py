@@ -40,36 +40,53 @@ def onMagneticFieldChange(self, magneticField, timestamp):
 	print("Timestamp: " + str(timestamp))
 	print("----------")
 
-def main():
-	#Create the Phidget channels
-	accelerometer0 = Accelerometer()
-	gyroscope0 = Gyroscope()
-	magnetometer0 = Magnetometer()
-	spatial = Spatial()
-	
-	#Assign any event handlers before calling open so that no events are missed.
-	accelerometer0.setOnAccelerationChangeHandler(onAccelerationChange)
-	gyroscope0.setOnAngularRateUpdateHandler(onAngularRateUpdate)
-	magnetometer0.setOnMagneticFieldChangeHandler(onMagneticFieldChange)
 
-	#Open your Phidgets and wait for attachment
-	accelerometer0.openWaitForAttachment(5000)
-	gyroscope0.openWaitForAttachment(5000)
-	magnetometer0.openWaitForAttachment(5000)
-    
+def main(arg):
 
-	# # Event handler when spatial data in received
-	# spatial.setOnSpatialDataHandler(onSpatialData)
+	if arg == 'accelerometer':
+		#Create the Phidget channels
+		accelerometer0 = Accelerometer()
+		#Assign any event handlers before calling open so that no events are missed.
+		accelerometer0.setOnAccelerationChangeHandler(onAccelerationChange)
+		#Open your Phidgets and wait for attachment
+		accelerometer0.openWaitForAttachment(5000)
 
-	# # Hold the program until a Phidget channel matching the one specified is attached, or the function times out.
-	# spatial.openWaitForAttachment(5000)
+	elif arg == 'gyroscope':
+		#Create the Phidget channels
+		gyroscope0 = Gyroscope()
+		#Assign any event handlers before calling open so that no events are missed.
+		gyroscope0.setOnAngularRateUpdateHandler(onAngularRateUpdate)
+		#Open your Phidgets and wait for attachment
+		gyroscope0.openWaitForAttachment(5000)
+
+	elif arg == 'magnetometer':
+		#Create the Phidget channels
+		magnetometer0 = Magnetometer()
+		#Assign any event handlers before calling open so that no events are missed.
+		magnetometer0.setOnMagneticFieldChangeHandler(onMagneticFieldChange)
+		#Open your Phidgets and wait for attachment
+		magnetometer0.openWaitForAttachment(5000)
+
+	elif arg == 'spatial':
+		# Create the Phidget channel 
+		spatial0 = Spatial()
+		# Event handler when spatial data in received
+		spatial0.setOnSpatialDataHandler(onSpatialData)
+		# Hold the program until a Phidget channel matching the one specified is attached, or the function times out.
+		spatial0.openWaitForAttachment(5000)
 
 	try:
 		input("Press Enter to Stop\n")
 	except (Exception, KeyboardInterrupt):
+		if spatial0.isAttached():
+			spatial0.close()
+		if accelerometer0.isAttached():
+			accelerometer0.close()
+		if gyroscope0.isAttached():
+			gyroscope0.close()
+		if magnetometer0.isAttached():
+			magnetometer0.close()
 		pass
 
-	spatial.close()
-
 if __name__ == "__main__":
-    main()
+    main("accelerometer")
