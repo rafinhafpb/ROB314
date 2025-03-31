@@ -78,8 +78,7 @@ def main(arg):
 	try:
 		input("Press Enter to Stop\n")
 	except (Exception, KeyboardInterrupt):
-		if spatial0.isAttached():
-			spatial0.close()
+		spatial0.close()
 		if accelerometer0.isAttached():
 			accelerometer0.close()
 		if gyroscope0.isAttached():
@@ -89,4 +88,4 @@ def main(arg):
 		pass
 
 if __name__ == "__main__":
-    main("accelerometer")
+    main("spatial")

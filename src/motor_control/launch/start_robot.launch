@@ -1,0 +1,10 @@
+<launch>
+    <!-- Motor Controller Node -->
+    <node name="motor_controller" pkg="motor_control" type="sd02c_motor_control.py" output="screen" launch-prefix="python3"/>
+
+    <!-- Socket Data Processing Node -->
+    <node name="process_data" pkg="socket_pkg" type="process_data.py" output="screen" launch-prefix="python3"/>
+
+    <!-- Socket Server Node -->
+    <node name="socket_server" pkg="socket_pkg" type="socket_server.py" output="screen" launch-prefix="python3"/>
+</launch>
