@@ -1,0 +1,8 @@
+prefix=/home/rafinhafpb/catkin_ws/devel
+
+Name: phidgets_digital_inputs
+Description: Description of phidgets_digital_inputs
+Version: 1.0.9
+Cflags: -I/home/rafinhafpb/catkin_ws/src/phidgets_drivers/phidgets_digital_inputs/include
+Libs: -L${prefix}/lib -lphidgets_digital_inputs
+Requires: nodelet phidgets_api roscpp std_msgs

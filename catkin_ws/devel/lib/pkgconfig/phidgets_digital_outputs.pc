@@ -1,0 +1,8 @@
+prefix=/home/rafinhafpb/catkin_ws/devel
+
+Name: phidgets_digital_outputs
+Description: Description of phidgets_digital_outputs
+Version: 1.0.9
+Cflags: -I/home/rafinhafpb/catkin_ws/src/phidgets_drivers/phidgets_digital_outputs/include
+Libs: -L${prefix}/lib -lphidgets_digital_outputs
+Requires: nodelet phidgets_api phidgets_msgs roscpp std_msgs

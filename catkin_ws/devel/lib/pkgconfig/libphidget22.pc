@@ -1,0 +1,8 @@
+prefix=/home/rafinhafpb/catkin_ws/devel
+
+Name: libphidget22
+Description: Description of libphidget22
+Version: 1.0.9
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

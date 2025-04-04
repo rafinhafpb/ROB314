@@ -1,0 +1,8 @@
+prefix=/home/rafinhafpb/catkin_ws/devel
+
+Name: phidgets_high_speed_encoder
+Description: Description of phidgets_high_speed_encoder
+Version: 1.0.9
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: nodelet phidgets_api phidgets_msgs pluginlib roscpp sensor_msgs

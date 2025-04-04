@@ -1,0 +1,8 @@
+prefix=/home/rafinhafpb/catkin_ws/devel
+
+Name: phidgets_analog_inputs
+Description: Description of phidgets_analog_inputs
+Version: 1.0.9
+Cflags: -I/home/rafinhafpb/catkin_ws/src/phidgets_drivers/phidgets_analog_inputs/include
+Libs: -L${prefix}/lib -lphidgets_analog_inputs
+Requires: nodelet phidgets_api roscpp std_msgs

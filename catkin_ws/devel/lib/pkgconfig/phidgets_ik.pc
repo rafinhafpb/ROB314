@@ -1,0 +1,8 @@
+prefix=/home/rafinhafpb/catkin_ws/devel
+
+Name: phidgets_ik
+Description: Description of phidgets_ik
+Version: 1.0.9
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

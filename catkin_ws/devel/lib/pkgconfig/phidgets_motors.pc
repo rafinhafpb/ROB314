@@ -1,0 +1,8 @@
+prefix=/home/rafinhafpb/catkin_ws/devel
+
+Name: phidgets_motors
+Description: Description of phidgets_motors
+Version: 1.0.9
+Cflags: -I/home/rafinhafpb/catkin_ws/src/phidgets_drivers/phidgets_motors/include
+Libs: -L${prefix}/lib -lphidgets_motors
+Requires: nodelet phidgets_api phidgets_msgs roscpp std_msgs
